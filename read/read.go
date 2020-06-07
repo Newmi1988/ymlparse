@@ -4,14 +4,16 @@ import (
 	"io/ioutil"
 )
 
+
+
 func check(e error) {
 	if e != nil {
 		panic(e)
 	}
 }
 
-func ReadYML(filePath string) string {
+func ReadYML(filePath string) []byte {
 	dat, err := ioutil.ReadFile(filePath)
 	check(err)
-	return string(dat)
+	return dat
 }
