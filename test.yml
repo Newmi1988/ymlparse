@@ -1,3 +1,6 @@
-key : 
-        subkey : "value"
-        subkey2: "value2"
+key1: 
+        k1s1 : "k1s1v1"
+        k1s2 : "k1s2v2"
+key2:
+        k2s1 : "k2s2v1"
+        k2s2 : "k2s2v2"

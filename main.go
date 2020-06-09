@@ -1,9 +1,13 @@
 package main
 
 
-import "fmt"
-import "github.com/Newmi1988/ymlparse/read"
-import "github.com/Newmi1988/ymlparse/config"
+import (
+	"fmt"
+	"log"
+
+	"github.com/Newmi1988/ymlparse/read"
+	"github.com/Newmi1988/ymlparse/config"
+)
 
 func main() {
 	fmt.Println("Config Parser")
@@ -12,6 +16,13 @@ func main() {
 	data := read.ReadYML("test.yml")
 
 	cfg.SetFromBytes(data)
+
+	serviceConfig, err := cfg.Get("key2")
+	if err != nil {
+		log.Fatalf("Error with config")
+	}
+
+	fmt.Println(serviceConfig)
 }
 
 
